@@ -5,8 +5,6 @@ Version:	0.9.2
 Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
 Source0:	http://vsa.linuxcore.com/%{name}-%{version}.tgz
 URL:		http://vsa.linuxcore.com/
 BuildRequires:	autoconf
@@ -33,13 +31,6 @@ filtrСw.
 Summary:	The header files for compiling VSA plug-ins
 Summary(pl):	Pliki nagЁСwkowe do tworzenia wtyczek VSA
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 
 %description devel
 The vsa-devel package contains the header files needed to compile
