@@ -1,53 +1,71 @@
 Summary:	A sound visualizer for the GNOME panel and EsounD.
+Summary(pl):	Wizualizator d╪wiЙku dla panelu GNOME oraz EsounD.
 Name:		vsa
 Version:	0.9.2
-Release:	1
+Release:	2
 License:	GPL
-Group:		Applications/Multimedia
-Source:		http://vsa.linuxcore.com/%{name}-%{version}.tgz
+Group:		X11/Applications/Multimedia
+Group(de):	X11/Applikationen/Multimedia
+Group(pl):	X11/Aplikacje/Multimedia
+Source0:	http://vsa.linuxcore.com/%{name}-%{version}.tgz
 URL:		http://vsa.linuxcore.com/
-Requires:	fftw
+BuildRequires:	fftw-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+
 %description
-VSA is a visual sound analyzer applet (eye candy to go along with audio) for
-the GNOME panel and EsounD.  VSA supports layering any number of
-visualization, background or filter plug-ins, in any order. If you want to
-develop plug-ins for VSA, you'll also need to install vsa-devel.
+VSA is a visual sound analyzer applet (eye candy to go along with
+audio) for the GNOME panel and EsounD. VSA supports layering any
+number of visualization, background or filter plug-ins, in any order.
+If you want to develop plug-ins for VSA, you'll also need to install
+vsa-devel.
 
 %package devel
 Summary:	The header files for compiling VSA plug-ins.
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 
 %description devel
-The vsa-devel package contains the header files needed to compile plug-ins
-for the VSA visual sound analyzer applet for GNOME and EsounD. Install
-vsa-devel if you want to develop plug-ins for VSA.
+The vsa-devel package contains the header files needed to compile
+plug-ins for the VSA visual sound analyzer applet for GNOME and
+EsounD. Install vsa-devel if you want to develop plug-ins for VSA.
 
 %prep
 %setup -q
 
 %build
-./configure --prefix=/usr
+aclocal
+autoconf
+%configure --prefix=/usr
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} PREFIX=${RPM_BUILD_ROOT}%{prefix} install
-install -m755 -d ${RPM_BUILD_ROOT}%{prefix}/include/vsa
-install vsa-plugin.h ${RPM_BUILD_ROOT}%{prefix}/include/vsa/
+%{__make} PREFIX=${RPM_BUILD_ROOT}%{_prefix} install
+install -m755 -d ${RPM_BUILD_ROOT}%{_includedir}/vsa
+install vsa-plugin.h ${RPM_BUILD_ROOT}%{_includedir}/vsa/
+
+gzip -9nf README COPYING TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYING TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
-%{prefix}/bin/vsa_applet
-%{prefix}/share/applets/Multimedia/vsa_applet.desktop
-/etc/CORBA/servers/vsa_applet.gnorba
-%{prefix}/share/vsa/*
+%doc *.gz
+%attr(755,root,root) %{_bindir}/vsa_applet
+%{_datadir}/applets/Multimedia/vsa_applet.desktop
+%{_sysconfdir}/CORBA/servers/vsa_applet.gnorba
+%{_datadir}/vsa/*
 
 %files devel
 %defattr(644,root,root,755)
-%{prefix}/include/vsa/
+%{_includedir}/vsa/
