@@ -29,7 +29,7 @@ vsa-devel if you want to develop plug-ins for VSA.
 
 %build
 ./configure --prefix=/usr
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
