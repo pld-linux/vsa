@@ -7,7 +7,7 @@ Group:		Applications/Multimedia
 Source:		http://vsa.linuxcore.com/%{name}-%{version}.tgz
 URL:		http://vsa.linuxcore.com/
 Requires:	fftw
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 VSA is a visual sound analyzer applet (eye candy to go along with audio) for
