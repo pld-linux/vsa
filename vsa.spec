@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://vsa.linuxcore.com/%{name}-%{version}.tgz
+# Source0-md5:	88c21938fb0eaee31d7c507de1ea1eb3
 URL:		http://vsa.linuxcore.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
