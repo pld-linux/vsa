@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYING TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
+%doc README TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
 %attr(755,root,root) %{_bindir}/vsa_applet
 %{_datadir}/applets/Multimedia/vsa_applet.desktop
 %{_sysconfdir}/CORBA/servers/vsa_applet.gnorba
