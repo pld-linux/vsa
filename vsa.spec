@@ -33,7 +33,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=${RPM_BUILD_ROOT}%{prefix} install
+%{__make} PREFIX=${RPM_BUILD_ROOT}%{prefix} install
 install -m755 -d ${RPM_BUILD_ROOT}%{prefix}/include/vsa
 install vsa-plugin.h ${RPM_BUILD_ROOT}%{prefix}/include/vsa/
 
