@@ -56,14 +56,13 @@ rm -rf $RPM_BUILD_ROOT
 install -m755 -d ${RPM_BUILD_ROOT}%{_includedir}/vsa
 install vsa-plugin.h ${RPM_BUILD_ROOT}%{_includedir}/vsa/
 
-gzip -9nf README COPYING TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README COPYING TODO ChangeLog CONTRIBUTORS WISHLIST THEMES PLUGINS
 %attr(755,root,root) %{_bindir}/vsa_applet
 %{_datadir}/applets/Multimedia/vsa_applet.desktop
 %{_sysconfdir}/CORBA/servers/vsa_applet.gnorba
