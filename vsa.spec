@@ -46,7 +46,7 @@ dla wizualngo analizatora d¼wiêku VSA.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure --prefix=/usr
 %{__make}
 
