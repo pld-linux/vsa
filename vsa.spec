@@ -12,8 +12,6 @@ BuildRequires:	automake
 BuildRequires:	fftw-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 VSA is a visual sound analyzer applet (eye candy to go along with
