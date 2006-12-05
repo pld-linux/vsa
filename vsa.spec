@@ -1,3 +1,5 @@
+# TODO:
+#	- missing BRs
 Summary:	A sound visualizer for the GNOME panel and EsounD
 Summary(pl):	Wizualizator d¼wiêku dla panelu GNOME oraz EsounD
 Name:		vsa
@@ -11,6 +13,7 @@ URL:		http://vsa.linuxcore.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fftw-devel
+BuildRequires:	gtkxmhtml-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -51,9 +54,12 @@ dla wizualngo analizatora d¼wiêku VSA.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} PREFIX=${RPM_BUILD_ROOT}%{_prefix} install
-install -m755 -d ${RPM_BUILD_ROOT}%{_includedir}/vsa
-install vsa-plugin.h ${RPM_BUILD_ROOT}%{_includedir}/vsa/
+install -d $RPM_BUILD_ROOT%{_includedir}/vsa
+
+%{__make} install \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
+
+install vsa-plugin.h $RPM_BUILD_ROOT%{_includedir}/vsa
 
 
 %clean
@@ -65,8 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/vsa_applet
 %{_datadir}/applets/Multimedia/vsa_applet.desktop
 %{_sysconfdir}/CORBA/servers/vsa_applet.gnorba
-%{_datadir}/vsa/*
+%{_datadir}/vsa
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/vsa/
+%{_includedir}/vsa
