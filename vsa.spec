@@ -1,7 +1,7 @@
 # TODO:
 #	- missing BRs
 Summary:	A sound visualizer for the GNOME panel and EsounD
-Summary(pl.UTF-8):   Wizualizator dźwięku dla panelu GNOME oraz EsounD
+Summary(pl.UTF-8):	Wizualizator dźwięku dla panelu GNOME oraz EsounD
 Name:		vsa
 Version:	0.9.2
 Release:	2
@@ -31,7 +31,7 @@ filtrów.
 
 %package devel
 Summary:	The header files for compiling VSA plug-ins
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia wtyczek VSA
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia wtyczek VSA
 Group:		Development/Libraries
 
 %description devel
