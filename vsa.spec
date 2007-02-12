@@ -1,7 +1,7 @@
 # TODO:
 #	- missing BRs
 Summary:	A sound visualizer for the GNOME panel and EsounD
-Summary(pl):	Wizualizator dºwiÍku dla panelu GNOME oraz EsounD
+Summary(pl.UTF-8):   Wizualizator d≈∫wiƒôku dla panelu GNOME oraz EsounD
 Name:		vsa
 Version:	0.9.2
 Release:	2
@@ -24,14 +24,14 @@ number of visualization, background or filter plug-ins, in any order.
 If you want to develop plug-ins for VSA, you'll also need to install
 vsa-devel.
 
-%description -l pl
-VSA jest wizualnym analizatorem dºwiÍku napisanym jako aplet panelu
-GNOME i EsounD. VSA obs≥uguje wiele wizualizacji, t≥a i wtyczki
-filtrÛw.
+%description -l pl.UTF-8
+VSA jest wizualnym analizatorem d≈∫wiƒôku napisanym jako aplet panelu
+GNOME i EsounD. VSA obs≈Çuguje wiele wizualizacji, t≈Ça i wtyczki
+filtr√≥w.
 
 %package devel
 Summary:	The header files for compiling VSA plug-ins
-Summary(pl):	Pliki nag≥Ûwkowe do tworzenia wtyczek VSA
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do tworzenia wtyczek VSA
 Group:		Development/Libraries
 
 %description devel
@@ -39,9 +39,9 @@ The vsa-devel package contains the header files needed to compile
 plug-ins for the VSA visual sound analyzer applet for GNOME and
 EsounD. Install vsa-devel if you want to develop plug-ins for VSA.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag≥Ûwkowe potrzebne do kompilowania wtyczek
-dla wizualngo analizatora dºwiÍku VSA.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nag≈Ç√≥wkowe potrzebne do kompilowania wtyczek
+dla wizualngo analizatora d≈∫wiƒôku VSA.
 
 %prep
 %setup -q
